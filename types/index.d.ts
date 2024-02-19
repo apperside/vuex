@@ -59,11 +59,11 @@ export interface Commit {
   <P extends Payload>(payloadWithType: P, options?: CommitOptions): void;
 }
 
-export interface ActionContext<S, R> {
+export interface ActionContext<S, R, G = any> {
   dispatch: Dispatch;
   commit: Commit;
   state: S;
-  getters: any;
+  getters: G;
   rootState: R;
   rootGetters: any;
 }
